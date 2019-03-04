@@ -4,7 +4,6 @@ const Express = require('express');
 const BodyParser = require('body-parser');
 const Http = require("http");
 const HttpsClient = require("request");
-const Redis = require("redis");
 
 const _express = Express();
 const _httpServer = Http.createServer(_express);
