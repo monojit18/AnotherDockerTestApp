@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "preinstall": "mkdir -p logs",
-    "install": "npm install --save-dev express body-parser request redis",
+    "install": "npm install --save-dev express body-parser request",
     "start": "node anotherdockerserver.js 1> logs/anotherdockerserver.log 2>& 1"
   },
   "keywords": [
