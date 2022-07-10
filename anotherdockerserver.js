@@ -4,6 +4,7 @@ const Express = require('express');
 const BodyParser = require('body-parser');
 const Http = require("http");
 const HttpsClient = require("request");
+const FS = require("fs");
 
 const _express = Express();
 const _httpServer = Http.createServer(_express);
@@ -22,10 +23,32 @@ _express.use(BodyParser.urlencoded
 
 }));
 
+_express.get('/', (req, res) =>
+{
+
+    res.send('This is another workshop_docker GET --- root\n');   
+    
+});
+
 _express.get('/api', (req, res) =>
 {
 
-    res.send("This is another workshop_docker GET\n");
+    FS.readFile("/mnt/aci/default-response.txt", (error, data) =>
+    {
+
+        let responseString = "";
+        if (error !== null)
+            responseString = error.toString();
+        else if ((data === null) || (data.length === 0))
+            responseString =  "Nothing";
+        else
+            responseString = data.toString() + "\n";
+        
+        res.send(responseString + "\n");
+
+    });  
+
+    
     
 });
 

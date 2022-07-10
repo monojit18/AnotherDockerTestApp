@@ -1,6 +1,6 @@
 {
   "name": "anotherdockerworkshopapp",
-  "version": "2.0.7",
+  "version": "3.0.6",
   "description": "Test Another Docker",
   "main": "anotherdockerserver.js",
   "scripts": {
